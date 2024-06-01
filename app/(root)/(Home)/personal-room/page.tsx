@@ -16,7 +16,7 @@ const Table=({title,description}:{title:string;description:string})=>{
     )
 }
 
-const personalRoom = () => {
+const PersonalRoom = () => {
 
   const router=useRouter()
   const { user }=useUser()
@@ -54,4 +54,4 @@ const personalRoom = () => {
   )
 }
 
-export default personalRoom
+export default PersonalRoom
