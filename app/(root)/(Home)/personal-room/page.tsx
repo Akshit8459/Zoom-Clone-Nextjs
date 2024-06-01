@@ -18,8 +18,8 @@ const Table=({title,description}:{title:string;description:string})=>{
 
 const personalRoom = () => {
 
-  const router=useRouter();
-  const {user}=useUser()
+  const router=useRouter()
+  const { user }=useUser()
   const meetingId= user?.id;
   const meetingLink=`${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?personal=true`
   const client=useStreamVideoClient();
@@ -27,7 +27,7 @@ const personalRoom = () => {
   const startRoom=async()=>{
     if(!user || !client) throw new Error('User and Client is required');
     if(!call){
-      const newCall=client.call('default',meetingId);
+      const newCall=client.call('default',meetingId!);
       await newCall.getOrCreate(
         {data:{
             starts_at:new Date().toISOString(),
